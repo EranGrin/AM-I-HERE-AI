@@ -20,17 +20,13 @@ At the moment user can log in and the AI App will start automatically and save 
 ### To see the Data entries please refer to Terminal and Console
 
 Install:
-You will have to install couchDB locally 
-
-Credential for CouchDB should be
-user:admin
-pass:admin
-
-create db
+1. You will have to install couchDB locally 
+2. Credential for CouchDB should be
+    user:admin
+    pass:admin
+3. Create db
 name: useres 
-
-Then
-`npm i`
+4. Then `npm i`
 
 To Start the APP
 `node app.js`
