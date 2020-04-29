@@ -1,25 +1,11 @@
 const LocalStrategy = require('passport-local').Strategy;
 const bcrypt = require('bcryptjs');
 
-// Load DB (need to find how to declare the db globaly)
-let db = '';
-const nano = require ( 'nano' )('http://admin:admin@localhost:5984');
-let datenbank = nano.db;
-let dbName = 'users';
+const User = require('../models/User');
+const couchDb = require('../config/keys');
+const dbName = new User
 
-datenbank.list().then(
-    erg => {
-        if ( !erg.includes(dbName) ) return datenbank.create(dbName);
-        else return true;
-    }
-).then(
-    () => datenbank.use(dbName)
-).then(
-    () => {
-        console.log( 'DB is Loaded' );
-         db = datenbank.use(dbName)
-       
-    })
+const db = couchDb.use(dbName.dbName);
 
 
 // Load User model
@@ -32,10 +18,12 @@ module.exports = function(passport) {
         selector: { email :  email},
         fields: [ "email", 'password', '_id']
         })
+         
+
       .then(user => {
-        console.log(user)
-        console.log(user.docs[0].password)
-        if (!user) {
+        // console.log(user)
+        // console.log(user.docs[0].password)
+        if (user.bookmark == 'nil') {
           return done(null, false, { message: 'That email is not registered' });
         }
 
@@ -64,8 +52,8 @@ passport.deserializeUser(function(id, done) {
     fields: [ "email", 'password', '_id', 'name']
     }) 
   .then(user => {
-    console.log(user)
-    console.log(user.docs[0]._id)
+    // console.log(user)
+    // console.log(user.docs[0]._id)
 
     done(null, user); // :-)
 

@@ -1,6 +1,6 @@
 {
-  "name": "couch_db_login",
-  "version": "0.5.0",
+  "name": "am_i_here_ai",
+  "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
@@ -10,14 +10,20 @@
   "author": "E.G",
   "license": "ISC",
   "dependencies": {
+    "chokidar": "^3.3.1",
+    "fsevents": "^2.1.2",
+    "nano": "^8.1.0",
+    "on-change": "^1.6.2"
+  },
+  "devDependencies": {
     "bcryptjs": "^2.4.3",
     "connect-flash": "^0.1.1",
-    "ejs": "^3.0.1",
-    "express": "^4.17.1",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
     "express-ejs-layouts": "^2.5.0",
-    "express-session": "^1.17.0",
+    "express-session": "^1.15.6",
     "nano": "^8.1.0",
-    "passport": "^0.4.1",
+    "passport": "^0.4.0",
     "passport-local": "^1.0.0"
   }
 }

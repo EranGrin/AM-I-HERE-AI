@@ -1,5 +1,4 @@
-dbPassword = 'mongodb+srv://YOUR_USERNAME_HERE:'+ encodeURIComponent('YOUR_PASSWORD_HERE') + '@CLUSTER_NAME_HERE.mongodb.net/test?retryWrites=true';
+'use strict';
 
-module.exports = {
-    mongoURI: dbPassword
-};
+const nano = require('nano')('http://admin:admin@localhost:5984');
+module.exports = nano.db;
