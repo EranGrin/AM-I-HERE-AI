@@ -21,6 +21,14 @@ At the moment user can log in and the AI App will start automatically and save 
 
 Install:
 You will have to install couchDB locally 
+
+Credential for CouchDB should be
+user:admin
+pass:admin
+
+create db
+name: useres 
+
 Then
 `npm i`
 
