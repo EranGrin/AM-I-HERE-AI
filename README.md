@@ -8,3 +8,20 @@ Presence and absences of the person that in front the webcam 
 
 Based on:
 https://ml5js.org
+
+Goal:
+to have a dashboard that presence charts of the Presence / Absences of a person 
+
+Present Status:
+At the moment user can log in and the AI App will start automatically and save the data of Presence and absences in couchDB Database.
+
+### As for now there is no Data visualizing in the dashboard!!!
+
+### To see the Data entries please refer to Terminal and Console
+
+To Start the APP
+`npm i`
+Then
+`node app.js`
+
+
